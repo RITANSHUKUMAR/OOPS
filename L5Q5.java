@@ -70,11 +70,11 @@ class Student {
     }
 }
 
-public class L5Q3 {
+public class L5Q5 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
-        scanner.nextLine();
+        scanner.nextLine(); // Consume newline
 
         // Create an array of student records
         Student[] students = new Student[n];
@@ -113,11 +113,14 @@ public class L5Q3 {
             student.display();
         }
 
-        // List students whose name starts with 'P'
-        Student.listStudentsByNameStartsWith(students, 'P');
+        // Get user input for listing students
+        System.out.print("Enter a character to list students whose name starts with this character: ");
+        char initial = scanner.nextLine().charAt(0);
+        Student.listStudentsByNameStartsWith(students, initial);
 
-        // List students whose name contains 'Kalingrao'
-        Student.listStudentsByNameContains(students, "Kalingrao");
+        System.out.print("Enter a substring to list students whose name contains this substring: ");
+        String subString = scanner.nextLine();
+        Student.listStudentsByNameContains(students, subString);
 
         // Modify full names to initials and family name
         for (Student student : students) {
