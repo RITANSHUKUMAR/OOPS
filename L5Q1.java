@@ -48,21 +48,21 @@ class EMPLOYEE {
 
     // Method to generate email
     String generateEmail() {
+        // Assuming the name is in "FirstName LastName" format
         String[] words = Ename.split(" ");
-        String email = "";
-        for (String word : words) {
-            email += word.substring(0, 1).toLowerCase();
-        }
-        email += "@example.com";
+        String firstNameInitial = words[0].substring(0, 1).toLowerCase();
+        String lastName = words[1].toLowerCase();
+        String email = firstNameInitial + lastName + "@example.com";
         return email;
     }
 }
 
-public class L3Q2 {
+public class L5Q1 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         System.out.print("Enter the number of employees: ");
         int N = scanner.nextInt();
+        scanner.nextLine(); // Consume newline
 
         EMPLOYEE[] employees = new EMPLOYEE[N];
 
